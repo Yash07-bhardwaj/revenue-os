@@ -13,10 +13,7 @@ app.use(express.json());
 // RAZORPAY TEST MODE
 // ========================================
 
-const razorpay = new Razorpay({
-  key_id: process.env.RAZORPAY_KEY_ID,
-  key_secret: process.env.RAZORPAY_KEY_SECRET
-});
+
 
 // ========================================
 // DEMO MERCHANT DATA
@@ -167,6 +164,10 @@ app.post("/api/analyze", (req, res) => {
 app.post("/api/recovery-link", async (req, res) => {
 
   try {
+    const razorpay = new Razorpay({
+  key_id: process.env.RAZORPAY_KEY_ID,
+  key_secret: process.env.RAZORPAY_KEY_SECRET
+});
 
     const amount = Number(req.body.amount) || 10000;
 
