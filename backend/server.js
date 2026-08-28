@@ -233,10 +233,12 @@ app.post("/api/recovery-link", async (req, res) => {
 // START SERVER
 // ========================================
 
-app.listen(5050, () => {
+if (require.main === module) {
+  app.listen(5050, () => {
+    console.log(
+      "🚀 RevenueOS Agent running on http://localhost:5050"
+    );
+  });
+}
 
-  console.log(
-    "🚀 RevenueOS Agent running on http://localhost:5050"
-  );
-
-});
+module.exports = app;
