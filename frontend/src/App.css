@@ -1,0 +1,941 @@
+/* ========================================
+   GLOBAL
+======================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #08090d;
+  color: #f5f5f5;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  background: #08090d;
+}
+
+
+/* ========================================
+   SIDEBAR
+======================================== */
+
+.sidebar {
+  width: 250px;
+  min-height: 100vh;
+  border-right: 1px solid #202126;
+  padding: 28px 20px;
+  background: #0d0e13;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar h1 {
+  font-size: 22px;
+  margin: 0 0 35px;
+  letter-spacing: -0.5px;
+}
+
+.merchant {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: #15161c;
+  border: 1px solid #25262d;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+
+.avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f5;
+  color: #111;
+  font-weight: 700;
+}
+
+.merchant strong,
+.merchant span {
+  display: block;
+}
+
+.merchant strong {
+  font-size: 14px;
+}
+
+.merchant span {
+  color: #858690;
+  font-size: 11px;
+  margin-top: 3px;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.nav-item {
+  padding: 12px 14px;
+  color: #858690;
+  border-radius: 9px;
+  font-size: 14px;
+}
+
+.nav-item.active {
+  background: #1b1c22;
+  color: white;
+}
+
+.nav-item:hover {
+  background: #17181e;
+  color: white;
+}
+
+.ai-status {
+  margin-top: auto;
+  padding: 13px;
+  border: 1px solid #24252b;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background: #4ade80;
+  border-radius: 50%;
+}
+
+.ai-status strong,
+.ai-status span {
+  display: block;
+}
+
+.ai-status strong {
+  font-size: 12px;
+}
+
+.ai-status span {
+  color: #777983;
+  font-size: 10px;
+  margin-top: 3px;
+}
+
+
+/* ========================================
+   MAIN
+======================================== */
+
+.main {
+  flex: 1;
+  padding: 40px;
+  max-width: 1500px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
+}
+
+.eyebrow {
+  color: #777983;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin: 0 0 8px;
+}
+
+header h2 {
+  margin: 0;
+  font-size: 28px;
+  letter-spacing: -1px;
+}
+
+.subtitle {
+  color: #777983;
+  margin: 8px 0 0;
+  font-size: 13px;
+}
+
+.ask-button {
+  background: #f5f5f5;
+  color: #0c0d10;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 9px;
+  font-weight: 700;
+}
+
+.ask-button:hover {
+  opacity: 0.88;
+}
+
+
+/* ========================================
+   STATS
+======================================== */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.stat-card {
+  background: #101116;
+  border: 1px solid #22232a;
+  padding: 20px;
+  border-radius: 13px;
+}
+
+.stat-card span {
+  color: #7e808a;
+  display: block;
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+
+.stat-card strong {
+  display: block;
+  font-size: 27px;
+  letter-spacing: -1px;
+}
+
+.stat-card small {
+  display: block;
+  margin-top: 8px;
+  font-size: 11px;
+}
+
+.positive {
+  color: #4ade80;
+}
+
+.negative {
+  color: #fb7185;
+}
+
+.ai-text {
+  color: #a78bfa;
+}
+
+
+/* ========================================
+   CONTENT
+======================================== */
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 20px;
+}
+
+.card {
+  background: #101116;
+  border: 1px solid #22232a;
+  border-radius: 14px;
+  padding: 22px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.section-header h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.live {
+  color: #4ade80;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+
+/* ========================================
+   OPPORTUNITIES
+======================================== */
+
+.opportunity {
+  display: grid;
+  grid-template-columns: 35px 1fr 120px 75px;
+  align-items: center;
+  gap: 12px;
+  padding: 15px;
+  border: 1px solid #24252b;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.danger .icon {
+  background: #351b21;
+  color: #fb7185;
+}
+
+.warning .icon {
+  background: #352c1b;
+  color: #fbbf24;
+}
+
+.normal .icon {
+  background: #202331;
+  color: #a78bfa;
+}
+
+.opp-info strong,
+.opp-info span {
+  display: block;
+}
+
+.opp-info strong {
+  font-size: 13px;
+}
+
+.opp-info span {
+  color: #777983;
+  font-size: 10px;
+  margin-top: 4px;
+}
+
+.amount {
+  text-align: right;
+}
+
+.amount strong,
+.amount span {
+  display: block;
+}
+
+.amount strong {
+  font-size: 13px;
+}
+
+.amount span {
+  color: #777983;
+  font-size: 9px;
+  margin-top: 3px;
+}
+
+.opportunity button {
+  background: transparent;
+  border: 1px solid #33343b;
+  color: #bbbcc3;
+  padding: 7px;
+  border-radius: 7px;
+  font-size: 10px;
+}
+
+.opportunity button:hover {
+  background: #1b1c22;
+  color: white;
+}
+
+.find-button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 14px;
+  border: 0;
+  border-radius: 9px;
+  background: #f5f5f5;
+  color: #101116;
+  font-weight: 700;
+}
+
+.find-button:hover {
+  opacity: 0.9;
+}
+
+
+/* ========================================
+   AGENT ACTIVITY
+======================================== */
+
+.activity {
+  border-top: 1px solid #22232a;
+  padding-top: 8px;
+}
+
+.activity-line {
+  display: flex;
+  gap: 12px;
+  padding: 13px 0;
+  border-bottom: 1px solid #1e1f24;
+}
+
+.dot {
+  margin-top: 5px;
+  width: 7px;
+  height: 7px;
+  background: #4ade80;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.activity-line strong,
+.activity-line small {
+  display: block;
+}
+
+.activity-line strong {
+  font-size: 12px;
+}
+
+.activity-line small {
+  color: #777983;
+  margin-top: 4px;
+  font-size: 10px;
+}
+
+.agent-goal {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  background: #171820;
+  border: 1px solid #282933;
+}
+
+.agent-goal span {
+  color: #777983;
+  font-size: 10px;
+}
+
+.agent-goal strong {
+  display: block;
+  margin-top: 7px;
+  font-size: 13px;
+}
+
+.agent-goal p {
+  color: #858690;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+
+/* ========================================
+   AI OVERLAY
+======================================== */
+
+.ai-overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.78);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 25px;
+
+  z-index: 100;
+
+  backdrop-filter: blur(8px);
+
+  overflow-y: auto;
+}
+
+
+/* ========================================
+   AI MODAL
+======================================== */
+
+.ai-modal {
+  width: 480px;
+  max-width: 100%;
+
+  background: #111217;
+
+  border: 1px solid #303139;
+
+  border-radius: 18px;
+
+  padding: 30px;
+
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5);
+}
+
+
+/* ========================================
+   ANALYZING MODAL
+======================================== */
+
+.loader,
+.success-icon {
+  width: 55px;
+  height: 55px;
+
+  border-radius: 15px;
+
+  background: #1d1e27;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 25px;
+
+  margin-bottom: 20px;
+}
+
+.loader {
+  animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.08);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.ai-modal h2 {
+  font-size: 24px;
+  margin: 0 0 10px;
+}
+
+.ai-modal p {
+  color: #858690;
+}
+
+.analysis-steps {
+  margin-top: 25px;
+  border-top: 1px solid #25262d;
+}
+
+.analysis-steps div {
+  padding: 12px 0;
+  border-bottom: 1px solid #202126;
+  font-size: 13px;
+  color: #bbbcc3;
+}
+
+
+/* ========================================
+   RESULT MODAL
+======================================== */
+
+.result-modal {
+  max-height: 88vh;
+
+  overflow-y: auto;
+
+  padding: 28px;
+
+  scrollbar-width: thin;
+
+  scrollbar-color: #3a3b43 transparent;
+}
+
+
+/* Chrome / Safari scrollbar */
+
+.result-modal::-webkit-scrollbar {
+  width: 5px;
+}
+
+.result-modal::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.result-modal::-webkit-scrollbar-thumb {
+  background: #3a3b43;
+  border-radius: 10px;
+}
+
+
+/* ========================================
+   RESULT CONTENT
+======================================== */
+
+.result-modal .success-icon {
+  margin: 0 auto 14px;
+}
+
+.result-modal .eyebrow {
+  text-align: center;
+}
+
+.result-modal h2 {
+  text-align: center;
+  font-size: 25px;
+  line-height: 1.25;
+  margin-bottom: 10px;
+}
+
+.result-text {
+  line-height: 1.5;
+  text-align: center;
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+
+
+/* ========================================
+   RESULT LIST
+======================================== */
+
+.result-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.result-item {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 12px 14px;
+
+  background: #181920;
+
+  border: 1px solid #272830;
+
+  border-radius: 9px;
+
+  margin-top: 0;
+}
+
+.result-item span {
+  color: #ddd;
+  font-size: 12px;
+}
+
+.result-item small {
+  display: block;
+  color: #777983;
+  font-size: 10px;
+  margin-top: 4px;
+}
+
+.result-item strong {
+  font-size: 14px;
+}
+
+
+/* ========================================
+   RECOMMENDED ACTION
+======================================== */
+
+.recommended-action {
+  margin-top: 14px;
+
+  padding: 14px;
+
+  border-radius: 10px;
+
+  background: #171820;
+
+  border: 1px solid #2a2b34;
+}
+
+.recommended-action .eyebrow {
+  text-align: left;
+  margin-bottom: 7px;
+}
+
+.recommended-action > strong {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.recommended-action p {
+  font-size: 11px;
+  line-height: 1.5;
+  margin: 5px 0;
+}
+
+.recommended-action small {
+  color: #a78bfa;
+  font-size: 10px;
+}
+
+
+/* ========================================
+   ACTION BUTTONS
+======================================== */
+
+.result-actions {
+  display: flex;
+
+  gap: 10px;
+
+  margin-top: 16px;
+
+  padding-top: 4px;
+}
+
+.secondary-button,
+.execute-button {
+  flex: 1;
+
+  min-height: 50px;
+
+  padding: 12px;
+
+  border-radius: 9px;
+
+  font-weight: 600;
+
+  font-size: 13px;
+}
+
+.secondary-button {
+  background: transparent;
+
+  color: #aaa;
+
+  border: 1px solid #33343b;
+}
+
+.secondary-button:hover {
+  background: #191a20;
+  color: white;
+}
+
+.execute-button {
+  background: #f5f5f5;
+
+  color: #111;
+
+  border: none;
+}
+
+.execute-button:hover {
+  background: #ffffff;
+}
+
+
+/* ========================================
+   RAZORPAY SUCCESS
+======================================== */
+
+.recovery-success {
+  margin-top: 14px;
+
+  padding: 14px;
+
+  border-radius: 12px;
+
+  background: #15171d;
+
+  border: 1px solid #30323b;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  text-align: center;
+}
+
+.recovery-icon {
+  width: 38px;
+  height: 38px;
+
+  border-radius: 50%;
+
+  background: #1b2a20;
+
+  color: #4ade80;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 20px;
+
+  margin-bottom: 8px;
+}
+
+.recovery-info strong {
+  display: block;
+
+  font-size: 16px;
+
+  margin-bottom: 4px;
+}
+
+.recovery-info p {
+  margin: 4px 0;
+
+  font-size: 11px;
+
+  color: #858690;
+}
+
+.recovery-info small {
+  display: block;
+
+  color: #666872;
+
+  font-size: 9px;
+
+  word-break: break-all;
+
+  margin-top: 5px;
+}
+
+
+/* ========================================
+   PAYMENT LINK BUTTON
+======================================== */
+
+.payment-link {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin-top: 10px;
+
+  padding: 10px 18px;
+
+  border-radius: 8px;
+
+  background: #f5f5f5;
+
+  color: #111;
+
+  text-decoration: none;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+.payment-link:hover {
+  opacity: 0.9;
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 1000px) {
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .sidebar {
+    display: none;
+  }
+
+  .main {
+    padding: 20px;
+  }
+
+  header {
+    align-items: flex-start;
+
+    gap: 20px;
+
+    flex-direction: column;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .opportunity {
+    grid-template-columns: 35px 1fr;
+
+    gap: 10px;
+  }
+
+  .amount {
+    text-align: left;
+    grid-column: 2;
+  }
+
+  .opportunity button {
+    grid-column: 2;
+    width: 100%;
+  }
+
+  .ai-overlay {
+    padding: 15px;
+  }
+
+  .ai-modal {
+    padding: 22px;
+  }
+
+  .result-actions {
+    flex-direction: column;
+  }
+
+  .secondary-button,
+  .execute-button {
+    width: 100%;
+  }
+
+}
