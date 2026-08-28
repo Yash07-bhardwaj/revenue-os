@@ -19,7 +19,7 @@ function App() {
 
     try {
       const response = await fetch(
-        "http://localhost:5050/api/analyze",
+       "https://revenue-lzrlw3rcv-yash-codesync.vercel.app/api/analyze",
         {
           method: "POST",
           headers: {
@@ -61,7 +61,7 @@ function App() {
 
     try {
       const response = await fetch(
-        "http://localhost:5050/api/recovery-link",
+        "https://revenue-lzrlw3rcv-yash-codesync.vercel.app/api/recovery-link",
         {
           method: "POST",
           headers: {
