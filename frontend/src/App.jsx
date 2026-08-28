@@ -401,9 +401,13 @@ function App() {
 
           </div>
 
-          <button className="ask-button">
-            ✦ Ask RevenueOS
-          </button>
+          <button
+  className="ask-button"
+  onClick={findRevenue}
+  disabled={analyzing}
+>
+  {analyzing ? "Analyzing..." : "✦ Ask RevenueOS"}
+</button>
 
         </header>
 
